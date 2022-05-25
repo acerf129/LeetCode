@@ -20,3 +20,11 @@ class Solution:
                 rows[line-1][j-1]=c
                 c=int(c*(line-j)/j)
         return rows
+
+        dp=[[1]*(n+1) for n in range(numRows)]
+        
+        for i in range(numRows):            
+            for j in range(0,i):
+                if j!=0 and j!=i:
+                    dp[i][j]=dp[i-1][j-1]+dp[i-1][j]
+        return dp

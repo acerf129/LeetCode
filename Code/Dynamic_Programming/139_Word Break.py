@@ -23,6 +23,6 @@ class Solution:
             for w in wordDict:
                 if (i+len(w))<=len(s) and s[i:i+len(w)]==w:
                     dp[i]=dp[i+len(w)]
-                if dp[i]==True:
+                if dp[i]:
                     break
         return dp[0]
