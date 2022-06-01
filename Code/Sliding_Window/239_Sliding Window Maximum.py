@@ -1,5 +1,6 @@
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        #Always Decreasing!!!
         q=deque()
         req=[]
         l,r=0,0
