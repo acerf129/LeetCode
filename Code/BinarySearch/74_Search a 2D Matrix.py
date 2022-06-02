@@ -11,6 +11,7 @@ class Solution:
                 bot=mid-1
             else:
                 break
+        #check the rows
         if not top<=bot:            
             return False
         mid=(top+bot)//2
