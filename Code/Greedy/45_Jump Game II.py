@@ -10,3 +10,12 @@ class Solution:
             l,r=r+1,far
             req+=1
         return req
+
+        dp=[float('inf') for i in range(len(nums))]
+        dp[0]=0
+        #dp i =
+        for i in range(len(nums)):
+            r=i+nums[i]
+            for j in range(i,min(len(nums),r+1)):                
+                dp[j]=min(dp[j],1+dp[i])
+        return dp[-1]
