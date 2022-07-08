@@ -1,5 +1,5 @@
 class Solution:
-    def characterReplacement(self, s: str, k: int) -> int:
+    def character(self, s: str, k: int) -> int:
         s=s.lower()
         dic={}
         req=0
