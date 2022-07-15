@@ -29,3 +29,4 @@ class Solution:
             for j in range(len(temp)-1):
                 temp[j].next=temp[j+1]
         return root
+        

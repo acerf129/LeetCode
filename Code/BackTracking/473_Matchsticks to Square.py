@@ -34,3 +34,22 @@ class Solution:
             return False
         
         return backtrack(0,0,0)
+
+        sums=sum(matchsticks)
+        if sums%4 or not matchsticks:
+            return False
+        target=sums//4
+        matchsticks.sort(reverse=True)
+        sums=[0 for _ in range(4)]
+        
+        def dfs(index):
+            if index==len(matchsticks):
+                return sums[0]==sums[1]==sums[2]==target
+            for i in range(4):
+                if sums[i]+matchsticks[index]<=target:
+                    sums[i]+=matchsticks[index]
+                    if dfs(index+1):
+                        return True
+                    sums[i]-=matchsticks[index]
+            return False    
+        return dfs(0)
