@@ -11,3 +11,13 @@ class Solution:
             res[i]*=postfix
             postfix*=nums[i]
         return res
+        req=[]
+        prefix=1
+        for n in nums:
+            req.append(prefix)
+            prefix*=n
+        suffix=1
+        for i in range(len(nums)-1,-1,-1):
+            req[i]*=suffix
+            suffix*=nums[i]
+        return req

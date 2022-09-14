@@ -30,3 +30,17 @@ class Solution:
             if  j==len(needle):
                 return i-len(needle)
         return -1
+
+        prev,i=0,1
+        while i<n:
+            if needle[i]==needle[prev]:
+                lps[i]=prev+1
+                prev+=1
+                i+=i
+            else:
+                if prev==0:
+                    lps[i]=0
+                    i+=1
+                else:
+                    prev=lps[prev-1]
+            
